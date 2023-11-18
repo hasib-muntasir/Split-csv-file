@@ -2,18 +2,16 @@ import pandas as pd
 import math
 import tkinter as tk
 from tkinter import filedialog
-import os
 
-dir_path = os.path.dirname(__file__)
 def split_csv_file(input_csv, rows_to_split):
     with open(input_csv) as data_file:
         data = pd.read_csv(data_file)
 
     data_size = len(data)
-    print(f"Input file has a total of {data_size} rows")
+    # print(f"Input file has a total of {data_size} rows")
 
     file_need_to_create = math.ceil(data_size / rows_to_split)
-    print(f"Number of files to create: {file_need_to_create}")
+    # print(f"Number of files to create: {file_need_to_create}")
 
     output_file_number = 1
     start_row = 0
